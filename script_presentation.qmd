@@ -1,8 +1,10 @@
 ---
-title: Extreme Theory of Functional Connections
-subtitle: Keypoints on the paper
-author: Ramkumar
-date: today
+# title: Extreme Theory of Functional Connections
+# title-slide-attributes:
+#     data-background-image: supportingFiles/profilePic/profilePic.jpeg
+# subtitle: Keypoints on the paper
+# author: Ramkumar
+# date: today
 format:
     revealjs:
         incremental: false
@@ -11,132 +13,157 @@ format:
         show-slide-number: all
         # auto-slide: 3000
         progress: true
-        chalkboard: true
-        transition: slide
+        chalkboard: false
+        transition: concave
         navigation-mode: vertical
-        include-in-header:
-             text: |
-               <style>
-               .v-center-container {
-                 display: flex;
-                 justify-content: center;
-                 align-items: center;
-                 height: 90%;
-               }
-               </style>
+        # include-in-header:
+        #      text: |
+        #        <style>
+        #        .v-center-container {
+        #          display: flex;
+        #          justify-content: center;
+        #          align-items: center;
+        #          height: 90%;
+        #        }
+        #        </style>
 ---
 
-# Overview
+##
 
-## Overview on the work
-- About solution of parametric Differential Equations
-- Another solution methodology using Theory of Functional Connections <a href="https://ssel.arizona.edu/research-projects/theory-functional-connections" target="_blank">[link]</a>
-- And Extreme Learning Machines (ELMs)
-- Combining ELMs and TFC to form Extreme Theory of Functional Connections
-- Modeling a part of the _constrained function_ with NNs, specifically ELMs
-- Then, usual Physics loss based training will be performed
+::::: {.columns style='display: flex !important; height: 90%;'}
 
+::: {.column width="50%" style='display: flex; justify-content: center; align-items: center;'}
 
-# Extreme Learning Machines
+::: {style="font-size: 150%"}
+Ramkumar's Blog
+:::
 
-## ELMs
-- They are regular feed-forward neural networks with additional tunable parameters in each node
+:::
 
-- They can be single or multilayered networks
+::: {.column}
+![](supportingFiles/profilePic/profilePic.jpeg)
+:::
 
-- functional form  of each node can be
-  $$
-  h_i(\bar{x}) = G\left(\bar{a}_i,b_i,\bar{x}\right)
-  $$
-
-- $h_i(.)$ is a nonlinear piecewise continuous function
+::::
 
 
-## ELMs
 
-- $G(.)$ can be a real or complex function
-- Examples of $G(.)$ in real domain are
-  - sigmoid function
-  - fourier function = $sin(\bar{a}.\bar{x}+b)$
-  - harlimit function
-  - gaussian function etc...
-- Examples of $G(.)$ in complex domain are
-  - Circular functions like $tan(z)$, $sin(z)$ etc...
+## About me
+Hi, I am Ramkumar. I would describe myself as
 
-## Training ELM
+- A research scholar in the field of computational physics
+- A programming enthusiast
+- A rider who loves to explore places through own physical effort (a.k.a. a cyclist)
+- and more.
+<!-- - Another solution methodology using Theory of Functional Connections <a href="https://ssel.arizona.edu/research-projects/theory-functional-connections" target="_blank">[link]</a> -->
 
-- It is a kind of regularization neural networks with non-tuned hidden layer mapping
+I would like to use this blog to showcase my achievements in multiple domains.
 
-- A simplest ELM training algorithm learns a model of the form (with single HL & sigmoid function)
-  $$
-  \hat{Y} = W_2 \sigma \left(W_1 \bar{x}\right)
-  $$
-
-  where,
-  $W_1$ is matrix of input to hidden layer weights
-  $W_2$ is matrix of hidden layer to output weights
+My github page is  <a href="https://github.com/Ramkumar47" target="_blank">[github.com/Ramkumar47]</a>
 
 
-## Training ELM
+# test title
 
-The algorithm is as follows
-
-- Fill $W_1$ with random values like from Gaussian White Noise
-- Estimate $W_2$ by least squares fit to $Y$ with design matrix $X$  and pseudo
-  inverse $^+$ as
-  $$
-  W_2 = \sigma\left(W_1 X\right)^+ Y
-  $$
-
-# Theory of Functional Connections (TFC)
-
-## TFC <a href="https://ssel.arizona.edu/research-projects/theory-functional-connections" target="_blank">[link]</a>
-
-- Converts the constrained optimization problem into an unconstrained optimization problem
-- by taking the solution in a _constrained expression_ (CE)  form
-- A general parametric DE be of the form, with $f$ as its solution function
-  $$
-  f_t + N\left[f;\lambda\right] = 0
-  $$
-
-  $\lambda$ is a parameter vector
-
-## TFC
-- CE is a sum of a function that analytically satisfies the
-  constraints, and a _functional_ containing a freely-chosen function $g(x)$
-  that projects it onto a space of functions that vanish at the constraints
-
-- Then, according to TFC,  $f$ can be written in the form
-  $$
-  f(x;\lambda) = f_{CE}\left(x,g(x);\lambda\right) = A\left(x;\lambda\right) + B\left(x,g(x);\lambda\right)
-  $$
-- This functional form will be substituted in the DE and solved for it
-
-
-# Extreme-TFC (X-TFC)
-
-## X-TFC
-- In literature, this form
-  $$
-  f(x;\lambda) = f_{CE}\left(x,g(x);\lambda\right) = A\left(x;\lambda\right) + B\left(x,g(x);\lambda\right)
-  $$
-
-  The $g(x)$ will be modeled by a neural network.
-
-- Shown to be working, but with high computing cost
-
-- So, authors have modeled $g(x)$ with an ELM
-
-- resulting in faster and low computing cost
-- Hence the name Extreme TFC or X-TFC
-
-## X-TFC
-
-- The model is trained using ELM algorithm
-
-- A list of ODEs and PDEs were solved for trial
-
-- Compared X-TFC with FEM and other methods for PDE
-
-- Proposed for both data-driven solution and data-driven model discovery, but
-  currently presented for data-driven solution using PI X-TFC.
+<!-- # Extreme Learning Machines -->
+<!--  -->
+<!-- ## ELMs -->
+<!-- - They are regular feed-forward neural networks with additional tunable parameters in each node -->
+<!--  -->
+<!-- - They can be single or multilayered networks -->
+<!--  -->
+<!-- - functional form  of each node can be -->
+<!--   $$ -->
+<!--   h_i(\bar{x}) = G\left(\bar{a}_i,b_i,\bar{x}\right) -->
+<!--   $$ -->
+<!--  -->
+<!-- - $h_i(.)$ is a nonlinear piecewise continuous function -->
+<!--  -->
+<!--  -->
+<!-- ## ELMs -->
+<!--  -->
+<!-- - $G(.)$ can be a real or complex function -->
+<!-- - Examples of $G(.)$ in real domain are -->
+<!--   - sigmoid function -->
+<!--   - fourier function = $sin(\bar{a}.\bar{x}+b)$ -->
+<!--   - harlimit function -->
+<!--   - gaussian function etc... -->
+<!-- - Examples of $G(.)$ in complex domain are -->
+<!--   - Circular functions like $tan(z)$, $sin(z)$ etc... -->
+<!--  -->
+<!-- ## Training ELM -->
+<!--  -->
+<!-- - It is a kind of regularization neural networks with non-tuned hidden layer mapping -->
+<!--  -->
+<!-- - A simplest ELM training algorithm learns a model of the form (with single HL & sigmoid function) -->
+<!--   $$ -->
+<!--   \hat{Y} = W_2 \sigma \left(W_1 \bar{x}\right) -->
+<!--   $$ -->
+<!--  -->
+<!--   where, -->
+<!--   $W_1$ is matrix of input to hidden layer weights -->
+<!--   $W_2$ is matrix of hidden layer to output weights -->
+<!--  -->
+<!--  -->
+<!-- ## Training ELM -->
+<!--  -->
+<!-- The algorithm is as follows -->
+<!--  -->
+<!-- - Fill $W_1$ with random values like from Gaussian White Noise -->
+<!-- - Estimate $W_2$ by least squares fit to $Y$ with design matrix $X$  and pseudo -->
+<!--   inverse $^+$ as -->
+<!--   $$ -->
+<!--   W_2 = \sigma\left(W_1 X\right)^+ Y -->
+<!--   $$ -->
+<!--  -->
+<!-- # Theory of Functional Connections (TFC) -->
+<!--  -->
+<!-- ## TFC <a href="https://ssel.arizona.edu/research-projects/theory-functional-connections" target="_blank">[link]</a> -->
+<!--  -->
+<!-- - Converts the constrained optimization problem into an unconstrained optimization problem -->
+<!-- - by taking the solution in a _constrained expression_ (CE)  form -->
+<!-- - A general parametric DE be of the form, with $f$ as its solution function -->
+<!--   $$ -->
+<!--   f_t + N\left[f;\lambda\right] = 0 -->
+<!--   $$ -->
+<!--  -->
+<!--   $\lambda$ is a parameter vector -->
+<!--  -->
+<!-- ## TFC -->
+<!-- - CE is a sum of a function that analytically satisfies the -->
+<!--   constraints, and a _functional_ containing a freely-chosen function $g(x)$ -->
+<!--   that projects it onto a space of functions that vanish at the constraints -->
+<!--  -->
+<!-- - Then, according to TFC,  $f$ can be written in the form -->
+<!--   $$ -->
+<!--   f(x;\lambda) = f_{CE}\left(x,g(x);\lambda\right) = A\left(x;\lambda\right) + B\left(x,g(x);\lambda\right) -->
+<!--   $$ -->
+<!-- - This functional form will be substituted in the DE and solved for it -->
+<!--  -->
+<!--  -->
+<!-- # Extreme-TFC (X-TFC) -->
+<!--  -->
+<!-- ## X-TFC -->
+<!-- - In literature, this form -->
+<!--   $$ -->
+<!--   f(x;\lambda) = f_{CE}\left(x,g(x);\lambda\right) = A\left(x;\lambda\right) + B\left(x,g(x);\lambda\right) -->
+<!--   $$ -->
+<!--  -->
+<!--   The $g(x)$ will be modeled by a neural network. -->
+<!--  -->
+<!-- - Shown to be working, but with high computing cost -->
+<!--  -->
+<!-- - So, authors have modeled $g(x)$ with an ELM -->
+<!--  -->
+<!-- - resulting in faster and low computing cost -->
+<!-- - Hence the name Extreme TFC or X-TFC -->
+<!--  -->
+<!-- ## X-TFC -->
+<!--  -->
+<!-- - The model is trained using ELM algorithm -->
+<!--  -->
+<!-- - A list of ODEs and PDEs were solved for trial -->
+<!--  -->
+<!-- - Compared X-TFC with FEM and other methods for PDE -->
+<!--  -->
+<!-- - Proposed for both data-driven solution and data-driven model discovery, but -->
+<!--   currently presented for data-driven solution using PI X-TFC. -->
